@@ -1,5 +1,5 @@
-import 'package:ar/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'items_upload_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple
       ),
-      home: HomeScreen(),
+      home: ItemsUploadScreen(),
     );
   }
 }
