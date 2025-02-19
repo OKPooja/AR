@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'ar_screen.dart';
 import 'ar_view_local.dart';
 
 class ItemsUploadScreen extends StatefulWidget {
