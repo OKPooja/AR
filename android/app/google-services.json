@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "492078914602",
+    "project_id": "ar-furniture-fbbac",
+    "storage_bucket": "ar-furniture-fbbac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492078914602:android:1b3abf9828b94b9cf47753",
+        "android_client_info": {
+          "package_name": "com.example.ar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjvHE4jI-AUK4GN7UUiDcPxy8Wge3ZSMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
