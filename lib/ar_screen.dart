@@ -74,9 +74,9 @@ class _ARScreenState extends State<ARScreen> {
   }
 
   Future<void> openingARV(BuildContext context) async {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const AugmentedRealityView()),
-    );
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => const AugmentedRealityView()),
+    // );
   }
 }

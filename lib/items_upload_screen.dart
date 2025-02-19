@@ -2,6 +2,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'ar_screen.dart';
+import 'ar_view_local.dart';
 
 class ItemsUploadScreen extends StatefulWidget {
   const ItemsUploadScreen({super.key});
@@ -28,12 +29,11 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ARScreen(),
+          builder: (context) => AugmentedRealityView(imageBytes: imageBytes),
         ),
       );
     }
   }
-
 
   Widget uploadFormScreen() {
     return Scaffold(
@@ -61,8 +61,8 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
         children: [
           isUploading
               ? const LinearProgressIndicator(
-            color: Colors.purpleAccent,
-          )
+                  color: Colors.purpleAccent,
+                )
               : Container(),
           SizedBox(
               height: 230,
@@ -70,7 +70,8 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
               child: Center(
                   child: image != null
                       ? Image.memory(image!)
-                      : const Icon(Icons.image_not_supported, color: Colors.grey))),
+                      : const Icon(Icons.image_not_supported,
+                          color: Colors.grey))),
           const Divider(
             color: Colors.white70,
             thickness: 2,
@@ -94,9 +95,9 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
 
   Widget defaultScreen() {
     return Scaffold(
-      backgroundColor: Colors.cyanAccent,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.cyanAccent,
+        backgroundColor: Colors.white,
         title: const Text(
           "Upload new item",
           style: TextStyle(color: Colors.black87),
@@ -116,6 +117,11 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
               onPressed: () {
                 showDialogBox();
               },
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
               child: const Text(
                 "Add New Item",
                 style: TextStyle(color: Colors.black87),
@@ -139,31 +145,34 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
           ),
           children: [
             SimpleDialogOption(
-                onPressed: () {
-                  pickImage(ImageSource.camera);
-                  Navigator.pop(context);
-                },
-                child: const Text(
-                  "Capture Image with Camera",
-                  style: TextStyle(color: Colors.grey),
-                )),
+              onPressed: () {
+                pickImage(ImageSource.camera);
+                Navigator.pop(context);
+              },
+              child: const Text(
+                "Capture Image with Camera",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
             SimpleDialogOption(
-                onPressed: () {
-                  pickImage(ImageSource.gallery);
-                  Navigator.pop(context);
-                },
-                child: const Text(
-                  "Choose Image from Gallery",
-                  style: TextStyle(color: Colors.grey),
-                )),
+              onPressed: () {
+                pickImage(ImageSource.gallery);
+                Navigator.pop(context);
+              },
+              child: const Text(
+                "Choose Image from Gallery",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
             SimpleDialogOption(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text(
-                  "Cancel",
-                  style: TextStyle(color: Colors.grey),
-                )),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text(
+                "Cancel",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
           ],
         );
       },
